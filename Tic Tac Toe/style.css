@@ -1,0 +1,154 @@
+:root {
+    --bg-main: #00000043;
+    --bg-body: #ffffff;
+    --color-txt: #000;
+    --filled-color: #000000;
+    --filled-bg: #0000ff3d;
+
+    --white: #fff;
+    --blue: #0000ffb5;
+    --red: #ff0000b5;
+    --black: #000;
+
+    --nav-size: 90px;
+    --cell-size: 120px;
+
+    --border-radius: 15px;
+
+    --space-y: 20px;
+
+    --gap: 10px;
+
+    --font-size: 1.25rem;
+    --font-size-lg: 2rem;
+    --font-size-xl: 4rem;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: "Alkarta", cursive;
+    /* height: 100vh; */
+    background-color: var(--bg-body);
+    overflow-x: hidden;
+    user-select: none;
+}
+
+.main {
+    height: 100vh;
+    padding-top: var(--nav-size);
+    display: grid;
+    place-items: center;
+}
+
+.screen {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    min-width: 400px;
+}
+
+.main-game {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0;
+}
+
+a {
+    text-decoration: none;
+    color: unset;
+}
+
+nav {
+    background-color: var(--bg-body);
+    color: var(--color-txt);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 5px 2px var(--bg-main);
+    z-index: 99;
+}
+
+.nav-container {
+    max-width: 1280px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 40px;
+    height: var(--nav-size);
+}
+
+.nav-logo {
+    font-size: var(--font-size-xl);
+    color: var(--blue);
+    margin: 0 1rem;
+}
+
+.back-btn {
+    width: auto;
+    margin: 0 1rem;
+    border-radius: calc(var(--border-radius) * 1.6);
+    background-color: var(--blue);
+    color: var(--white);
+    font-size: var(--font-size-xl);
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+}
+
+.game--container {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    color: #04c0b2;
+    gap: var(--gap);
+}
+
+.cell {
+    font-family: "Potta one", cursive;
+    height: var(--cell-size);
+    width: var(--cell-size);
+    cursor: pointer;
+    border-radius: var(--border-radius);
+    background-color: var(--bg-main);
+    color: var(--blue);
+    display: grid;
+    place-items: center;
+    font-size: var(--font-size-xl);
+}
+
+@keyframes zoom-in {
+    0% {
+        transform: scale(3);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.game--status {
+    font-size: var(--font-size-xl);
+    color: var(--blue);
+    margin: var(--space-y) auto;
+}
+
+.game--restart {
+    background-color: var(--blue);
+    width: 280px;
+    height: 80px;
+    font-size: var(--font-size-lg);
+    color: var(--white);
+    border-radius: var(--border-radius);
+    display: grid;
+    place-items: center;
+    transition: width 0.3s ease-in-out;
+    overflow: hidden;
+    cursor: pointer;
+}

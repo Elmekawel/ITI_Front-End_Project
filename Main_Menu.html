@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triple Fine</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+    <style>
+        :root {
+            --bg-main: #00000043;
+            --bg-body: #ffffff;
+            --color-txt: #000;
+            --filled-color: #000000;
+            --filled-bg: #0000ff3d;
+
+            --white: #fff;
+            --blue: #0000ffb5;
+            --red: #ff0000b5;
+            --black: #000;
+
+            --nav-size: 90px;
+            --sudoku-cell-size: 50px;
+
+            --border-radius: 15px;
+
+            --space-y: 20px;
+
+            --gap: 7px;
+
+            --font-size: 1.25rem;
+            --font-size-lg: 2rem;
+            --font-size-xl: 4rem;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: "Alkarta", cursive;
+            /* height: 100vh; */
+            background-color: var(--bg-body);
+            overflow-x: hidden;
+            user-select: none;
+        }
+
+        img {
+            mix-blend-mode: darken;
+        }
+
+        .btn-primary {
+            background-color: var(--white);
+            border-color: var(--blue);
+            font-size: var(--font-size-lg);
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            color: var(--color-txt);
+        }
+
+        .btn:hover {
+            background-color: var(--blue);
+            font-size: var(--font-size-xl);
+            font-weight: 600;
+            color: var(--white);
+
+        }
+
+        .card {
+            background-color: var(--filled-bg);
+            border-radius: var(--border-radius);
+        }
+
+        .card-body {
+            font-size: large;
+            color: var(--color-txt);
+            font-weight: 300;
+        }
+
+        .card-title {
+            font-size: xx-large;
+        }
+
+        .card-subtitle {
+            font-size: small;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+
+
+    <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+        <div class="d-grid gap-5 col-6" style="border-radius: var(--border-radius); padding: 20px; border: 25px solid var(--blue)">
+            <button onclick="window.location.href = 'Tic Tac Toe\\index.html';" class="btn btn-primary" type="button" onmouseover="imagedisplay(event)"
+                onmouseout="imagedisappear(event)">Tic-Tac-Toe</button>
+            <img src="pictures/tictactoe.png" class="rounded mx-auto d-block" id="myimg1"
+                style="width: 100px; height: 100px;">
+            <button onclick="window.location.href = 'The Quiz\\The_Quiz.html';" class="btn btn-primary" type="button" onmouseover="imagedisplay(event)"
+                onmouseout="imagedisappear(event)">Quiz Champion</button>
+            <img src="pictures/quiz.png" class="rounded mx-auto d-block" id="myimg2"
+                style="width: 100px; height: 100px;">
+            <button onclick="window.location.href = 'Sudoku\\index.html';" class="btn btn-primary" type="button" onmouseover="imagedisplay(event)"
+                onmouseout="imagedisappear(event)">Sudoku</button>
+            <img src="pictures/sudoku.png" class="rounded mx-auto d-block" id="myimg3"
+                style="width: 100px; height: 100px;">
+        </div>
+        <!-- the description-->
+        <div class="position-absolute top-2 start-0 ms-5">
+            <div class="card" style="width: 24rem; height: 700px;">
+                <div class="card-body">
+                    <h5 class="card-title">Triple Fine</h5>
+                    <h6 class="card-subtitle ">Made by Ahmed Fathy, Ali Khaled, and Mahmoud Nasser.</h6>
+                    <br>
+                    <p class="card-text">Our team appreciates you spending the time to play our game, here are some few
+                        instructions that might help you understand more of what our game is about:</p>
+                    <ul>
+                        <li>The First game is Tic-Tac-Toe, you can click on the the button that says "Tic-Tac-Toe" to
+                            play it, it is a multiplayer game so grab a friend and try it! </li>
+                        <br>
+                        <li>Test your intelligence with our second game "Quiz Champion" where your knowledge will be put
+                            to test, are you up for the challenge?</li>
+                        <br>
+                        <li>If you think highly of yourself in puzzle games then please try Sudoku and play with your
+                            friends and prove to them once and for all who is the Sudoku Champion!</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <script>
+
+        function imagedisplay(event) {
+            if (event.target.textContent === "Tic-Tac-Toe") {
+                let img = document.getElementById('myimg1');
+                img.style.transition = 'all 0.3s';
+                img.style.width = '150px';
+                img.style.height = '150px';
+            }
+            else if (event.target.textContent === "Quiz Champion") {
+                let img = document.getElementById('myimg2');
+                img.style.transition = 'all 0.3s';
+                img.style.width = '150px';
+                img.style.height = '150px';
+            }
+            else if (event.target.textContent === "Sudoku") {
+                let img = document.getElementById('myimg3');
+                img.style.transition = 'all 0.3s';
+                img.style.width = '150px';
+                img.style.height = '150px';
+            }
+
+
+        }
+
+        function imagedisappear(event) {
+            if (event.target.textContent === "Tic-Tac-Toe") {
+                let img = document.getElementById('myimg1');
+                img.style.transition = 'all 0.6s';
+                img.style.width = '150px';
+                img.style.height = '100px';
+            }
+            else if (event.target.textContent === "Quiz Champion") {
+                let img = document.getElementById('myimg2');
+                img.style.transition = 'all 0.6s';
+                img.style.width = '150px';
+                img.style.height = '100px';
+            }
+            else if (event.target.textContent === "Sudoku") {
+                let img = document.getElementById('myimg3');
+                img.style.transition = 'all 0.6s';
+                img.style.width = '150px';
+                img.style.height = '100px';
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>

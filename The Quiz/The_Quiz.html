@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="shortcut icon" href="images\favicon.png" type="image/x-icon">
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Potta+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alkatra&display=swap" rel="stylesheet">
+    <!-- box icons -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="stylesheet" href="style_quiz.css">
+
+</head>
+
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="back-btn" id="btn-back">
+                <i class="bx bx-arrow-back"></i>
+            </div>
+            <a href="#" class="nav-logo">
+                Quiz Champion
+            </a>
+        </div>
+    </nav>
+    <div id="End-screen"></div>
+    <div class="app">
+        <h1 id="welcome">Welcome to the Quiz !!!!</h1>
+        <div id="rules-card">
+            <h2>RULES</h2>
+            <ul>
+                <li>You have a choice if you select a wrong answer to reset the game or continue.</li>
+                <li>The best score you can get is 6 out of 6.</li>
+                <li>There is no time limit.</li>
+                <li>Have Fun :)</li>
+            </ul>
+        </div>
+        <div class="quiz">
+            <h2 id="question">What is "Cynophobia" ?</h2>
+            <div id="answer-buttons">
+                <button class="btn" onclick="answerselect(event)">Fear of Dogs</button>
+                <button class="btn" onclick="answerselect(event)">Fear of Heights</button>
+                <button class="btn" onclick="answerselect(event)">Fear of Spiders</button>
+                <button class="btn" onclick="answerselect(event)">Fear of Socializing</button>
+            </div>
+            <button id="next-btn" onclick="changequestions()">Next</button>
+            <button id="reset-btn" onclick="resetgame()">Reset</button>
+            <br>
+            <div id="message"></div>
+        </div>
+
+    </div>
+
+
+
+    <script src="script_quiz.js"></script>
